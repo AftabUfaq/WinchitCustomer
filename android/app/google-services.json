@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "758443170170",
+    "firebase_url": "https://winchit.firebaseio.com",
+    "project_id": "winchit",
+    "storage_bucket": "winchit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758443170170:android:08d961eb09866512375ec3",
+        "android_client_info": {
+          "package_name": "com.codefreaks.winchit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "758443170170-8nf7113ir4kcjfel42l3jodd30lj6nio.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codefreaks.winchit",
+            "certificate_hash": "b09a5ab40cb612d4d50ebcea07d3535ec8dbfcd0"
+          }
+        },
+        {
+          "client_id": "758443170170-up443pk0p99gokkprns0qonq0dhh52n9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codefreaks.winchit",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "758443170170-g5vn61rbe9ori51rp8kr5serfkm897pq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdrEPYkAa-V8C19_xBE1A120OfDrgvgMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "758443170170-g5vn61rbe9ori51rp8kr5serfkm897pq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "758443170170-aa8bqi8aett2ksubbpon9o6be90gh28v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codefreaks.winchit"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758443170170:android:187e9cbef3df2e5b375ec3",
+        "android_client_info": {
+          "package_name": "com.codefreaks.winchit.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "758443170170-g5vn61rbe9ori51rp8kr5serfkm897pq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdrEPYkAa-V8C19_xBE1A120OfDrgvgMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "758443170170-g5vn61rbe9ori51rp8kr5serfkm897pq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "758443170170-aa8bqi8aett2ksubbpon9o6be90gh28v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.codefreaks.winchit"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

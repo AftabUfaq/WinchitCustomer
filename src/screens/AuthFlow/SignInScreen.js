@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {
-  SafeAreaView,
   ScrollView,
   Image,
   View,
@@ -13,9 +12,9 @@ import CustomButton from '../../components/Button';
 import {useDispatch} from 'react-redux';
 import { Login } from "../../store/actions/LoginActions";
 import {commonStyles, textStyles} from '../../styles';
-import {AppScreenWidth, width} from '../../constants/sacling';
+import {AppScreenWidth, hp, width} from '../../constants/sacling';
 import {scale} from 'react-native-size-matters';
-import {AuthRoutes} from '../../constants/routes';
+import {AuthRoutes, MainRoutes} from '../../constants/routes';
 import Spacer from '../../components/Spacer';
 import DrawLine from '../../components/DrawLine';
 import {colors} from '../../constants/theme';
@@ -23,10 +22,11 @@ import GOOGLE from '../../assets/images/google.svg';
 import CustomHeader from '../../components/CustomHeader';
 import MICROSOFT from '../../assets/images/microsoft.svg';
 import { candidateLogin } from '../../api';
+import { AppImages } from "../../assets/Images";
 const SignInScreen = ({navigation}) => {
-  const [email_address, setUseremail] = useState('bacha@gmail.com'); // dr.aftabufaq@gmail.com
+  const [email_address, setUseremail] = useState('+923408906107'); // dr.aftabufaq@gmail.com
   const [UseremailErrorMesage, setUseremailErrorMessaage] = useState('');
-  const [password, setPassword] = useState('6n#1Np7{)L5y'); //123456
+  const [password, setPassword] = useState('hello123'); //123456
   const [passwordErrorMessage, setPasswordErrorMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
@@ -67,6 +67,7 @@ const SignInScreen = ({navigation}) => {
       console.log(err);
     })
   };
+
   return (
     <View style={commonStyles.container}>
         <CustomHeader 
@@ -79,13 +80,13 @@ const SignInScreen = ({navigation}) => {
           alignItems: 'center',
         }}>
         <Image
-          resizeMode={'cover'}
+          resizeMode={"contain"}
           resizeMethod={'resize'}
-          style={{width: width}}
-          source={require('../../assets/images/login.png')}
+          style={{width: width/2, height:hp(40)}}
+          source={AppImages.blueLogo}
         />
         <CustomTextInput
-          placeholder={'Email Address'}
+          placeholder={'Mobile Number'}
           value={email_address}
           onChangeText={text => setUseremail(text)}
           errorMessage={UseremailErrorMesage}
@@ -100,7 +101,7 @@ const SignInScreen = ({navigation}) => {
         <TouchableOpacity
           onPress={() => navigation.navigate(AuthRoutes.ForgotPasswordScreen)}
           style={{width: AppScreenWidth, alignItems: 'flex-end'}}>
-          <Text style={{...textStyles.title, color: '#FD9215'}}>
+          <Text style={{...textStyles.title, color:colors.default_primary_color}}>
             Forgot Password?
           </Text>
         </TouchableOpacity>
@@ -115,7 +116,14 @@ const SignInScreen = ({navigation}) => {
         <Spacer />
         <DrawLine height={0.6} />
         <Spacer />
-        <Text style={{...textStyles.Label, textAlign: 'center'}}>OR</Text>
+         <Text style={{...textStyles.Label, textAlign: 'center'}}>OR</Text>
+         <DrawLine height={0.6} />
+         <Spacer />
+         <TouchableOpacity onPress={() => navigation.navigate(AuthRoutes.SignUpScreen) } >
+            <Text style={{...textStyles.Label, color:colors.default_primary_color}}>Create a new account?</Text>
+         </TouchableOpacity>
+         <Spacer />
+         <DrawLine height={0.6} />
         <View
           style={{
             width: AppScreenWidth,
@@ -135,22 +143,26 @@ const SignInScreen = ({navigation}) => {
             </Text>
           </TouchableOpacity>
           <TouchableOpacity style={{...styles.GoogleButton}}>
-            <MICROSOFT width={scale(15)} height={scale(15)} />
+              <Image
+                  source={AppImages.fb_btn}
+                  style={{width:scale(15),height:scale(15)}}
+                  resizeMode={"contain"}
+              />
             <Text
               style={{
                 ...textStyles.title,
                 marginLeft: scale(5),
                 textAlign: 'center',
               }}>
-              Sign In With Microsoft
+              Sign In With Facebook
             </Text>
           </TouchableOpacity>
         </View>
 
         <View
-          style={{width: width, paddingBottom: 10, backgroundColor: '#fff'}}>
+          style={{width: width,position:"absolute", bottom:0, paddingBottom: 10, backgroundColor: '#fff'}}>
           <Text style={textStyles.disabletext}>
-            Copyright @{new Date().getFullYear()} RecruitBPM All Rights Reserved
+            Copyright @{new Date().getFullYear()} Winchit All Rights Reserved
           </Text>
         </View>
       </ScrollView>
