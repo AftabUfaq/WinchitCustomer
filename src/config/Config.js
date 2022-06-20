@@ -1,0 +1,46 @@
+
+
+export const BASEURL =    "https://wichit-backend-dev.herokuapp.com/api/"
+export const STRIPE_PUBKEY ="pk_test_51JnsBcIGGfbiIqFSg1Uo7ucQRt4dV5AIHjDNfCZdxdcS4XnE7z1uCrc1F6efI77YchX29ksx4k7VipVS9cpbCt5900hhhUriBs";
+export const GOOGLE_MAPS_APIKEY = "AIzaSyAvMJQfSi7KEWnICftMup-QuqjEcSIGgp0"
+export const ENDPOINTS = {
+  LOGIN: "customer/auth/login/local",
+  REGISTER: "customer/users/register",
+  GET_PROFILE: "profile/self",
+  FETCH_OTP: "customer/auth/otp",
+  UPDATE_FCM:"customer/updatefcm",
+  GET_VEHICLES: "customer/vehicles/userVehicles",
+  GET_VECHILE_DEAILS:"customer/vehicles/getVehicle",
+  ADD_VECHILE:"customer/vehicles/addVehicle",
+  UPDATE_VECHILE:"customer/vehicles/updateVehicle",
+  DELETE_VECHILE:"customer/vehicles/deleteVehicle",
+  ADD_NEW_BREAKDOWN_REQUEST:"customer/request/breakdown/rides/new",
+  CANCEL_BREAKDOWN_REQUEST:"customer/request/breakdown/rides/cancel",
+  CANCEL_RELOCATE_REQUEST:"customer/relocate/rides/cancel",
+  EXPIRE_BREAKDOWN_REQUEST:"customer/request/breakdown/rides/expired",
+  ACCEPT_BREAKDOWN_QUOTE:"customer/breakdown/quotes/acceptQuote",
+  ACCEPT_RELOCATION_QUOTE:"customer/relocate/quotes/acceptQuote",
+  REJECT_BREAKDOWN_QUOTE:"customer/breakdown/quotes/rejectQuote",
+  REJECT_RELOCATION_QUOTE:"customer/relocate/quotes/rejectQuote",
+  ADD_NEW_RELOCATION_REQUEST: "customer/relocate/rides/new",
+  CUSTOMER_GET_INPROGRESS_DRIVER:"customer/requests/getAllInprogressRequests",
+  CUSTIMER_GET_ALL_BOOKING_HISTORY:"customer/myJourneys/all",
+  CUSTIMER_GET_ALL_RESCHEDULE_HISTORY:"customer/relocate/rides/getAllRelocateScheduledRequests",
+  CUSTOMET_GET_QUOTES_AGAINST_RELOCATE_SCHEDULE:"customer/requests/getQuotes",
+  REGISTER_FACEBOOK: "customer/users/facebook/register",
+  GOOGLE: "customer/users/google/register",
+  CUSTOMER_RATINGS: "customer/ratings/",
+  MY_JOURNEYS: "customer/myjourneys/all",
+  SEND_OTP: "password/forgotpassword/otp",
+  FORGOT_PASS: "password/forgotpassword/change",
+  SAVED_ADDRESS: "customer/savedPlaces/add",
+  GET_USER: "users/",
+  CREATE_PAYMENT_INTENT: "customer/payments/create-payment-intent",
+  RATE_CUSTOMER_DRIVER:"customer/ratings",
+  CUSTOMER_GET_BOOKING_FROM_NOTIFICATION:"request/getRequest",
+  CUSTOMER_GET_QUOTE_FROM_NOTIFICATION:"quote/getQuote",
+  NOTIFICATION_BEFORE_ARRIVING:"customer/request/breakdown/rides/notification_before_arriving",
+  DRIVER_ARRIVED_TO_KEYS_LOCATION:"driver/relocate/rides/arrived",
+  NOTIFICATION_REQUEST_HAS_TIMED_OUT:"customer/request/breakdown/rides/notification_request_has_timed_out",
+  GET_BOOKING_LOG:"driver/pinRequest/getCompletedBookingLog"
+};

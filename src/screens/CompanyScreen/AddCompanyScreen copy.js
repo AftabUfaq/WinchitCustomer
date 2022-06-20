@@ -3,38 +3,54 @@ import {SafeAreaView,ScrollView,StatusBar,Text,View} from 'react-native';
 import { commonStyles} from '../../styles';
 import { colors } from '../../constants/theme';
 import { scale } from 'react-native-size-matters';
-import ArrayInput from '../../components/ArrayInput';
+
 import CustomButton from '../../components/Button';
 import CustomHeader from '../../components/CustomHeader';
 import CustomTextInput from '../../components/TextInput';
 import DropdownAddComponent from '../../components/DropdownAddComponent';
 import Spacer from '../../components/Spacer';
-import { MainRoutes } from '../../constants/routes';
-    const AddJobScreen = ({navigation}) => { 
+    const AddCompanyScreen = ({navigation}) => { 
         
-       ///// ******        Companies Data             ****** /////
+       ///// ******        Companies  Status Data             ****** /////
 
-        const [companies, setCompanies] = useState([
+        const [company_status, setCompaniesStatus] = useState([
             {
               value: 1,
-              label: 'Zoobi Apps',
+              label: 'Active',
             },
             {
               value: 2,
-              label: 'IFuture',
+              label: 'DNS',
             },
             {
               value: 3,
-              label: 'Codefreaks',
+              label: 'Inactive',
             },
             {
               value: 4,
-              label: 'MetaFurture',
+              label: 'Lead',
             },
             {
               value: 5,
-              label: 'Right Source',
+              label: 'Paking Lot',
             },
+            {
+              value: 6,
+              label: 'Passive',
+            },
+            {
+              value: 7,
+              label: 'Past',
+            },
+            {
+              value: 8,
+              label: 'Prospecting',
+            },
+            {
+              value: 9,
+              label: 'Compaign',
+            },
+
            
         ]);
         const [selected_company, setSelectCompany] = useState("")
@@ -43,7 +59,7 @@ import { MainRoutes } from '../../constants/routes';
         
         //////******        Contacts Data             ****** //////////
 
-        const [contacts, setContacts] = useState([
+        const [company_own_list, setCompanyOwnerList] = useState([
             {
               value: 1,
               label: 'Aftab Ameen',
@@ -70,82 +86,61 @@ import { MainRoutes } from '../../constants/routes';
         const [contacts_modal_visible, setContactsModalVisibe] = useState(false)
         const [contact_name, setContactName] = useState("")
 
-        //////******        Periorty Data             ****** //////////
-
-        const [priority, setPrioritys] = useState([
-            {
-              value: 1,
-              label: 'Very High',
-            },
-            {
-              value: 2,
-              label: 'high',
-            },
-            {
-              value: 3,
-              label: 'Medium',
-            },
-            {
-              value: 4,
-              label: 'Low',
-            },
-            {
-              value: 5,
-              label: 'very low',
-            },
-           
-        ]);
-        const [selected_priority, setSelectPriority] = useState("")
-        const [priority_modal_visible, setPrioritysModalVisibe] = useState(false)
-        const [priority_name, setPriorityName] = useState("")
-
-        //////******        Techology Data             ****** //////////
-        const [technologys, setTechnologys] = useState([
-            {
-              value: 1,
-              label: 'React-Native',
-            },
-            {
-              value: 2,
-              label: 'MongoDB',
-            },
-            {
-              value: 3,
-              label: 'VS Code',
-            },
-            {
-              value: 4,
-              label: 'XCode',
-            },
-            {
-              value: 5,
-              label: 'Data Analysis',
-            },
-           
-        ]);
-        const [selected_Technology, setSelectTechnology] = useState("")
-        const [Technology_modal_visible, setTechnologysModalVisibe] = useState(false)
-        const [Technology_name, setTechnologyName] = useState("")
-
         //////******        Industry Data             ****** //////////
         const [Industrys, setIndustrys] = useState([
             {
-              value: 1,
-              label: 'IT',
+              value: "Disqus",
+              label: 'Disqus',
             },
             {
-              value: 2,
-              label: 'Telecommunication',
+              value: "Facebook",
+              label: 'Facebook',
             },
             {
-              value: 3,
-              label: 'Engineering',
+              value: "Google+",
+              label: 'Google+',
             },
             {
-              value: 4,
-              label: 'Medical',
+              value: "LinkedIn",
+              label: 'LinkedIn',
             },
-            
+            {
+              value: "Pinterest",
+              label: 'Pinterest',
+            },
+            {
+              value: "Renren",
+              label: 'Renren',
+            },
+            {
+              value: "Skype",
+              label: 'Skype',
+            },
+            {
+              value: "Snapchat",
+              label: 'Snapchat',
+            },
+            {
+              value: "Tumblr",
+              label: 'Tumblr',
+            },
+            {
+              value: "Twitter",
+              label: 'Twitter',
+            },
+            {
+              value: "Vine",
+              label: 'Vine',
+            },
+            {
+              value: "Whatsapp",
+              label: 'Whatsapp',
+            },
+           
+            {
+              value: "Youtube",
+              label: 'Youtube',
+            },
            
         ]);
         const [selected_Industry, setSelectIndustry] = useState("")
@@ -154,9 +149,8 @@ import { MainRoutes } from '../../constants/routes';
 
         /////////****** Job Data *////////////////////
 
-        const [job_data, setJobData] = useState({
-            job_id:"",
-            job_id_error:"",
+        const [company_data, setJobData] = useState({
+         
             job_title:"",
             job_title_error:"",
             priority:"",
@@ -175,7 +169,6 @@ import { MainRoutes } from '../../constants/routes';
             duration_error:"",
             no_of_openings:"",
             no_of_openings_error:"",
-            skills:["React-Native" , "React", "BlockChain","DB", "Data Analysis", "Content Writer SEO Specilist"],
             description:"",
             description_error:"",
             job_owner:"",
@@ -193,38 +186,29 @@ import { MainRoutes } from '../../constants/routes';
                         show_backButton={true}
                         isdrawer={false}
                         onPress={() => navigation.goBack()}
-                        title={"Add Job"}
+                        title={"Add Company"}
                     />
                     <ScrollView 
                         keyboardShouldPersistTaps="always"
                         showsVerticalScrollIndicator={false} >
-                       <CustomTextInput
-                            placeholder={'Job Id'}
-                            value={job_data.job_id}
-                            borderWidth={1}
-                            lableColor={colors.dark_primary_color}
-                            borderRadius={scale(5)}
-                            onChangeText={text => {
-                                setJobData({...job_data,job_id:text })
-                            }}
-                            errorMessage={""}
-                        />
+                       
                          <CustomTextInput
-                            placeholder={'Job title'}
-                            value={job_data.job_title}
+                            placeholder={'Company name'}
+                            value={company_data.job_title}
                             borderWidth={1}
                             lableColor={colors.dark_primary_color}
                             borderRadius={scale(5)}
                             onChangeText={text => {
-                                setJobData({...job_data,job_title:text })
+                                setJobData({...company_data,job_title:text })
                             }}
                             errorMessage={""}
                         />
                         <DropdownAddComponent 
-                            AddButtonPress={() => navigation.navigate(MainRoutes.AddCompanyScreen)}
-                            placeholder={"company"}
-                            items={companies}
-                            setItems={setCompanies}
+                            show_add_button={false}
+                            AddButtonPress={() => alert("company")}
+                            placeholder={"status"}
+                            items={company_status}
+                            setItems={setCompaniesStatus}
                             selectedItems={selected_company}
                             setSelectItems={setSelectCompany}
                             isVisible={companies_modal_visible}
@@ -234,10 +218,11 @@ import { MainRoutes } from '../../constants/routes';
                         />
                         
                         <DropdownAddComponent 
+                            show_add_button={false}
                             AddButtonPress={() => alert("company")}
-                            placeholder={"contact"}
-                            items={contacts}
-                            setItems={setContacts}
+                            placeholder={"Account Owner"}
+                            items={company_own_list}
+                            setItems={setCompanyOwnerList}
                             selectedItems={selected_contact}
                             setSelectItems={setSelectContact}
                             isVisible={contacts_modal_visible}
@@ -245,161 +230,122 @@ import { MainRoutes } from '../../constants/routes';
                             company_name={contact_name}
                             setCompanyName={setContactName}
                         />
-                        <DropdownAddComponent 
-                            AddButtonPress={() => alert("company")}
-                            placeholder={"priority"}
-                            items={priority}
-                            setItems={setPrioritys}
-                            selectedItems={selected_priority}
-                            setSelectItems={setSelectPriority}
-                            isVisible={priority_modal_visible}
-                            setIsVisible={setPrioritysModalVisibe}
-                            company_name={priority_name}
-                            setCompanyName={setPriorityName}
-                        />
+                       
 
                         <CustomTextInput
                             placeholder={'Status'}
-                            value={job_data.status}
+                            value={company_data.status}
                             borderWidth={1}
                             lableColor={colors.dark_primary_color}
                             borderRadius={scale(5)}
                             onChangeText={text => {
-                                setJobData({...job_data, status:text})
+                                setJobData({...company_data, status:text})
                             }}
                             errorMessage={""}
                         />
                         <CustomTextInput
                             placeholder={'Job type'}
-                            value={job_data.job_type}
+                            value={company_data.job_type}
                             borderWidth={1}
                             lableColor={colors.dark_primary_color}
                             borderRadius={scale(5)}
                             onChangeText={text => {
-                                setJobData({...job_data,job_type:text })
+                                setJobData({...company_data,job_type:text })
                             }}
                             errorMessage={""}
                         />
                         <CustomTextInput
                             placeholder={'Pay type'}
-                            value={job_data.pay_type}
+                            value={company_data.pay_type}
                             borderWidth={1}
                             lableColor={colors.dark_primary_color}
                             borderRadius={scale(5)}
                             onChangeText={text => {
-                                setJobData({...job_data,pay_type:text })
+                                setJobData({...company_data,pay_type:text })
                             }}
                             errorMessage={""}
                         />
                         <CustomTextInput
                             placeholder={'Bill rate'}
-                            value={job_data.bill_rate}
+                            value={company_data.bill_rate}
                             borderWidth={1}
                             lableColor={colors.dark_primary_color}
                             borderRadius={scale(5)}
                             onChangeText={text => {
-                                setJobData({...job_data,bill_rate:text })
+                                setJobData({...company_data,bill_rate:text })
                             }}
                             errorMessage={""}
                         />
                         <CustomTextInput
                             placeholder={'Pay/Salary'}
-                            value={job_data.pay_salary}
+                            value={company_data.pay_salary}
                             borderWidth={1}
                             lableColor={colors.dark_primary_color}
                             borderRadius={scale(5)}
                             onChangeText={text => {
-                                setJobData({...job_data,pay_salary:text })
+                                setJobData({...company_data,pay_salary:text })
                             }}
                             errorMessage={""}
                         />
                         <CustomTextInput
                             placeholder={'Duration'}
-                            value={job_data.duration}
+                            value={company_data.duration}
                             borderWidth={1}
                             lableColor={colors.dark_primary_color}
                             borderRadius={scale(5)}
                             onChangeText={text => {
-                                setJobData({...job_data,duration:text })
+                                setJobData({...company_data,duration:text })
                             }}
                             errorMessage={""}
                         />
                         <CustomTextInput
                             placeholder={'No. of Openings'}
-                            value={job_data.no_of_openings}
+                            value={company_data.no_of_openings}
                             borderWidth={1}
                             lableColor={colors.dark_primary_color}
                             borderRadius={scale(5)}
                             onChangeText={text => {
-                                setJobData({...job_data,no_of_openings:text })
-                            }}
-                            errorMessage={""}
-                        />
-                        <ArrayInput
-                            placeholder={'Add Skills'}
-                            skills={job_data.skills}
-                            borderWidth={1}
-                            lableColor={colors.dark_primary_color}
-                            borderRadius={scale(5)}
-                            onAdd={(skill) => {
-                                let temp_skills = job_data.skills
-                                temp_skills.push(skill)
-                                setJobData({...job_data, skills:temp_skills})
-                            }}
-                            onChangeText={index => {
-                                let temp_skills = job_data.skills
-                                delete temp_skills[index]
-                                setJobData({...job_data, skills:temp_skills})
+                                setJobData({...company_data,no_of_openings:text })
                             }}
                             errorMessage={""}
                         />
                         
+                        
                         <CustomTextInput
                             placeholder={'Description'}
-                            value={job_data.description}
+                            value={company_data.description}
                             borderWidth={1}
                             lableColor={colors.dark_primary_color}
                             borderRadius={scale(5)}
                             onChangeText={text => {
-                                setJobData({...job_data,description:text })
+                                setJobData({...company_data,description:text })
                             }}
                             errorMessage={""}
                         />
 
                         <CustomTextInput
                             placeholder={'Job Owner'}
-                            value={job_data.job_owner}
+                            value={company_data.job_owner}
                             borderWidth={1}
                             lableColor={colors.dark_primary_color}
                             borderRadius={scale(5)}
                             onChangeText={text => {
-                                setJobData({...job_data,job_owner:text })
+                                setJobData({...company_data,job_owner:text })
                             }}
                             errorMessage={""}
                         />
                         <CustomTextInput
                             placeholder={'Assigned Recruiter'}
-                            value={job_data.assigned_recruter}
+                            value={company_data.assigned_recruter}
                             borderWidth={1}
                             lableColor={colors.dark_primary_color}
                             borderRadius={scale(5)}
                             onChangeText={text => {
-                                setJobData({...job_data,assigned_recruter:text })
+                                setJobData({...company_data,assigned_recruter:text })
                             }}
                             errorMessage={""}
                         />
-                        <DropdownAddComponent 
-                            AddButtonPress={() => alert("company")}
-                            placeholder={"technology"}
-                            items={technologys}
-                            setItems={setTechnologys}
-                            selectedItems={selected_Technology}
-                            setSelectItems={setSelectTechnology}
-                            isVisible={Technology_modal_visible}
-                            setIsVisible={setTechnologysModalVisibe}
-                            company_name={Technology_name}
-                            setCompanyName={setTechnologyName}
-                        />
+                       
 
                         <DropdownAddComponent 
                             AddButtonPress={() => alert("company")}
@@ -432,5 +378,5 @@ import { MainRoutes } from '../../constants/routes';
 
 
 
-export default AddJobScreen;
+export default AddCompanyScreen;
 

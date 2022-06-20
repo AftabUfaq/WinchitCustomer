@@ -1,6 +1,3 @@
-import React from 'react'
-import {Platform} from 'react-native'
-
 export const fonts = {
     Bold:"Poppins-Bold",
     BoldItalic:"Poppins-BoldItalic",

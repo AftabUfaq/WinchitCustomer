@@ -17,15 +17,15 @@ import Job from '../../assets/images/job.svg'
 import OnBoarding from '../../assets/images/onboarding.svg'
 
     const HomeScreen = ({navigation}) => {
-       
-      
+
+
         const {user} = useSelector(state => state.LoginReducer)
-        
+
         return (
             <SafeAreaView style={{flex:1, backgroundColor:colors.dark_primary_color}} >
                 <StatusBar barStyle={"light-content"} />
                 <View style={commonStyles.container} >
-                    <CustomHeader 
+                    <CustomHeader
                         show_backButton={true}
                         isdrawer={true}
                         onPress={() => navigation.openDrawer()}
@@ -33,37 +33,37 @@ import OnBoarding from '../../assets/images/onboarding.svg'
                     />
                     <View style={{width:AppScreenWidth,marginVertical:scale(5) ,alignItems:"flex-start", alignSelf:"center"}} >
                         <Text style={styles.headingtext} >Welcome !</Text>
-                        <Text style={styles.nameText} >{user.preferred_name}</Text>
+
                         <Text style={styles.paragraph} >Streamline your company’s business efficiently managing candidates, jobs and placements</Text>
                     </View>
                     <View style={styles.main} />
 
                     <View style={styles.row} >
-                        <TouchableOpacity 
-                            onPress={() => navigation.navigate(MainRoutes.CompanyScreen)} 
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate(MainRoutes.CompanyScreen)}
                             style={styles.box} >
-                            <FontAwesome 
-                                name="building" 
-                                color={colors.dark_primary_color} 
-                                size={scale(30)} 
+                            <FontAwesome
+                                name="building"
+                                color={colors.dark_primary_color}
+                                size={scale(30)}
                             />
                             <Text style={styles.textStyle}>Company</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity 
-                            onPress={() => navigation.navigate(MainRoutes.ContactScreen) } 
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate(MainRoutes.ContactScreen) }
                             style={styles.box} >
-                            <FontAwesome5 
-                                name="user-tie" 
-                                color={colors.dark_primary_color} 
-                                size={scale(30)} 
+                            <FontAwesome5
+                                name="user-tie"
+                                color={colors.dark_primary_color}
+                                size={scale(30)}
                             />
                             <Text style={{...styles.textStyle}}>Contact</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity 
-                            onPress={() => navigation.navigate(MainRoutes.JobOrderScreen) } 
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate(MainRoutes.JobOrderScreen) }
                             style={styles.box} >
-                            <Job 
-                                width={scale(30)} 
+                            <Job
+                                width={scale(30)}
                                 height={scale(30)}
                             />
                             <Text style={{...styles.textStyle}}>Job Orders</Text>
@@ -71,102 +71,102 @@ import OnBoarding from '../../assets/images/onboarding.svg'
                     </View>
 
                     <View style={styles.row} >
-                        <TouchableOpacity 
-                            onPress={() => navigation.navigate(MainRoutes.CandidatesScreen)} 
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate(MainRoutes.CandidatesScreen)}
                             style={styles.box} >
-                            <FontAwesome5 
-                                name="users" 
-                                color={colors.dark_primary_color} 
-                                size={scale(30)} 
+                            <FontAwesome5
+                                name="users"
+                                color={colors.dark_primary_color}
+                                size={scale(30)}
                             />
                             <Text style={styles.textStyle}>Candidates</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity 
-                            onPress={() => navigation.navigate(MainRoutes.OnBoardingScreen) } 
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate(MainRoutes.OnBoardingScreen) }
                             style={styles.box} >
-                            <OnBoarding 
-                                width={scale(30)} 
+                            <OnBoarding
+                                width={scale(30)}
                                 height={scale(30)}
                             />
                             <Text style={{...styles.textStyle}}>onBoarding</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity 
-                            onPress={() => navigation.navigate(MainRoutes.PlacementsScreen) } 
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate(MainRoutes.PlacementsScreen) }
                             style={styles.box} >
-                            <Foundation 
-                                name="target" 
-                                color={colors.dark_primary_color} 
-                                size={scale(40)} 
+                            <Foundation
+                                name="target"
+                                color={colors.dark_primary_color}
+                                size={scale(40)}
                             />
                             <Text style={{...styles.textStyle}}>Placements</Text>
                         </TouchableOpacity>
                     </View>
 
                     <View style={styles.row} >
-                        <TouchableOpacity 
-                            onPress={() => navigation.navigate(MainRoutes.TimeSheetScreen)} 
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate(MainRoutes.TimeSheetScreen)}
                             style={styles.box} >
-                            <AntDesign 
-                                name="clockcircle" 
-                                color={colors.dark_primary_color} 
-                                size={scale(30)} 
+                            <AntDesign
+                                name="clockcircle"
+                                color={colors.dark_primary_color}
+                                size={scale(30)}
                             />
                             <Text style={styles.textStyle}>TimeSheets</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity 
-                            onPress={() => navigation.navigate(MainRoutes.ExpensesScreen) } 
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate(MainRoutes.ExpensesScreen) }
                             style={styles.box} >
-                            <Entypo 
-                                name="credit" 
-                                color={colors.dark_primary_color} 
-                                size={scale(30)} 
+                            <Entypo
+                                name="credit"
+                                color={colors.dark_primary_color}
+                                size={scale(30)}
                             />
                             <Text style={{...styles.textStyle}}>Expenses</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity 
-                            onPress={() => navigation.navigate(MainRoutes.InvoicesScreen) } 
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate(MainRoutes.InvoicesScreen) }
                             style={styles.box} >
-                            <FontAwesome5 
-                                name="file-invoice-dollar" 
-                                color={colors.dark_primary_color} 
-                                size={scale(30)} 
+                            <FontAwesome5
+                                name="file-invoice-dollar"
+                                color={colors.dark_primary_color}
+                                size={scale(30)}
                             />
                             <Text style={{...styles.textStyle}}>Invoices</Text>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.row} >
-                        <TouchableOpacity 
-                            onPress={() => navigation.navigate(MainRoutes.DashBoardScreen)} 
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate(MainRoutes.DashBoardScreen)}
                             style={styles.box} >
-                            <FontAwesome 
-                                name="dashboard" 
-                                color={colors.dark_primary_color} 
-                                size={scale(30)} 
+                            <FontAwesome
+                                name="dashboard"
+                                color={colors.dark_primary_color}
+                                size={scale(30)}
                             />
                             <Text style={styles.textStyle}>Dashboard</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity 
-                            onPress={() => navigation.navigate(MainRoutes.SettingsScreen) } 
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate(MainRoutes.SettingsScreen) }
                             style={styles.box} >
-                            <FontAwesome 
-                                name="gears" 
-                                color={colors.dark_primary_color} 
-                                size={scale(30)} 
+                            <FontAwesome
+                                name="gears"
+                                color={colors.dark_primary_color}
+                                size={scale(30)}
                             />
                             <Text style={{...styles.textStyle}}>Settings</Text>
                         </TouchableOpacity>
-                      
+
                     </View>
-                  
+
                     <View style={styles.main2} >
                         <Text style={styles.paragraph}>
                             Copyright @{new Date().getFullYear()} RecruitBPM All Rights Reserved
                         </Text>
                     </View>
-                
+
                 </View>
             </SafeAreaView>
-            
+
         );
     };
 
@@ -192,31 +192,31 @@ const styles = StyleSheet.create({
         alignItems:"center",
         paddingHorizontal:scale(5),
         bottom:scale(0),
-     
+
         borderTopLeftRadius:hp(3),
         borderTopRightRadius:hp(3),
         backgroundColor:colors.dark_primary_color
     },
     headingtext:{
         ...textStyles.heading,
-        fontSize:scale(22), 
-        color:"#fff", 
+        fontSize:scale(22),
+        color:"#fff",
         textAlign:"left"
     },
     nameText:{
         ...textStyles.title,
         fontSize:scale(18),
-        marginTop:scale(2), 
-        marginHorizontal:scale(5), 
-        color:"#fff", 
+        marginTop:scale(2),
+        marginHorizontal:scale(5),
+        color:"#fff",
         textAlign:"left"
     },
     paragraph:{
         ...textStyles.paragraph,
-        fontSize:scale(12), 
-        color:"#fff", 
+        fontSize:scale(12),
+        color:"#fff",
        includeFontPadding:false,
-        marginHorizontal:scale(5), 
+        marginHorizontal:scale(5),
         textAlign:"left"
     },
     row:{

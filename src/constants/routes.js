@@ -12,12 +12,17 @@ export const MainRoutes = {
     AddCandidatesScreen:"AddCandidatesScreen",
     HomeScreen:"HomeScreen",
     EditProfileScreen:"EditProfileScreen",
+
     CompanyScreen:"CompanyScreen",
+    AddCompanyScreen:"AddCompanyScreen",
+    
     ContactScreen:"ContactScreen",
     CandidatesDetailsScreen:"CandidatesDetailsScreen",
+
     JobOrderScreen:"JobOrderScreen",
     AddJobScreen:"AddJobScreen",
     JobDetailsScreen:"JobDetailsScreen",
+
     OnBoardingScreen:"OnBoardingScreen",
     PlacementsScreen:"PlacementsScreen",
     TimeSheetScreen:"TimeSheetScreen",

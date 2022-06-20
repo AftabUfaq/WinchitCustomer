@@ -16,27 +16,27 @@ const CustomTextInput = ({
             editable=true,
             TextInputwidth=AppScreenWidth,
             lableColor=colors.text_primary_color,
-            borderWidth=0, 
-            secureTextEntry = false, 
+            borderWidth=0,
+            secureTextEntry = false,
             onChangeText
         }) => {
     const [eyeon , setEyeOn] = useState(secureTextEntry)
     return (
-        <View 
-            style={{ 
+        <View
+            style={{
                 width:TextInputwidth,
                 justifyContent:"center",
-                borderWidth:0,  
+                borderWidth:0,
                 alignSelf:"center",
                 minHeight:verticalScale(50),
-                paddingTop:scale(5), 
+                paddingTop:scale(5),
                 marginVertical:scale(0)
             }} >
-           
+
                 <Text style={{...textStyles.Label, color:lableColor}}>
                         {placeholder}
                 </Text>
-           
+
             <View>
             <TextInput
                 secureTextEntry={eyeon}
@@ -46,9 +46,9 @@ const CustomTextInput = ({
                 editable={editable}
                 onChangeText={(text) => onChangeText(text)}
                 style={{
-                    backgroundColor:"#fff", 
+                    backgroundColor:"#fff",
                     marginVertical:verticalScale(0),
-                    width:width-scale(20), 
+                    width:TextInputwidth,
                     borderColor:colors.divide_color,
                     borderBottomWidth:1,
                     borderRadius:borderRadius,
@@ -62,11 +62,11 @@ const CustomTextInput = ({
             />
              {
                 secureTextEntry &&
-                    <TouchableOpacity 
+                    <TouchableOpacity
                         onPress={() => setEyeOn(!eyeon)}
                         style={{
-                            position:"absolute", 
-                            width:scale(30), 
+                            position:"absolute",
+                            width:scale(30),
                             marginVertical:verticalScale(5),
                             right:0,
                             borderTopRightRadius:5,
@@ -80,13 +80,13 @@ const CustomTextInput = ({
                     </TouchableOpacity>
             }
             </View>
-           
-            { 
-                errorMessage !== "" && 
-                <Animated.Text 
-                    entering={LightSpeedInRight} 
+
+            {
+                errorMessage !== "" &&
+                <Animated.Text
+                    entering={LightSpeedInRight}
                     exiting={LightSpeedOutLeft}
-                    style={textStyles.errorText}>
+                    style={{...textStyles.errorText, marginTop:5}}>
                         {errorMessage}
                 </Animated.Text>
             }

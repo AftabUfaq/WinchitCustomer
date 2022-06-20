@@ -60,7 +60,7 @@ export const textStyles = StyleSheet.create({
     },
     disabletext:{
         fontFamily:fonts.Regular,
-        fontSize:scale(12),
+        fontSize:scale(14),
         textAlign:"center",
         color:"rgba(0,0,0,.2)",
         backgroundColor:"#0000",

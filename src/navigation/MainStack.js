@@ -8,9 +8,11 @@ import CandidatesDetailsScreen from '../screens/CandidatesScreen/CandidateDetail
 
 import HomeScreen from '../screens/HomeScreen/index';
 import EditProfileScreen from '../screens/EditProfileScreen'
-import CompanyScreen from '../screens/CompanyScreen';
-import ContactScreen from '../screens/ContactScreen';
 
+import CompanyScreen from '../screens/CompanyScreen';
+
+import ContactScreen from '../screens/ContactScreen';
+import AddCompanyScreen from '../screens/CompanyScreen/AddCompanyScreen';
 import JobOrderScreen from '../screens/JobOrderScreen';
 import AddJobScreen from '../screens/JobOrderScreen/AddJobScreen'
 import JobDetailsScreen from '../screens/JobOrderScreen/JobDetailsScreen'
@@ -57,6 +59,16 @@ const MainStack = () => {
                     headerShown:false
                 }}
             />
+
+            <Stack.Screen 
+                name="AddCompanyScreen" 
+                component={AddCompanyScreen} 
+                options={{
+                    headerShown:false
+                }}
+            />
+
+
 
             <Stack.Screen 
                 name="ContactScreen" 
